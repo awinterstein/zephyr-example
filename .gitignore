@@ -1,0 +1,8 @@
+# Zephyr directories
+bootloader
+modules
+tools
+zephyr
+
+# build directory
+build

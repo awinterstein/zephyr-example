@@ -1,0 +1,36 @@
+// spell-checker:words akiramiyakoda cppincludeguard cheshirekow Gruntfuggly cpptools devicetree kconfig marus twxs xaver yzhang
+{
+    "name": "Zephyr Development",
+    "image": "ghcr.io/awinterstein/zephyr-build:main",
+    "mounts": [
+        // to keep the extensions over multiple container executions
+        "type=bind,source=${localWorkspaceFolder}/.devcontainer/vscode-data,target=/home/develop/.vscode-server"
+    ],
+    "runArgs": [
+        "--rm",
+        "--network",
+        "host",
+        "--privileged", // needed for device debugger access
+        "-v",
+        "/dev:/dev"
+    ],
+    "overrideCommand": true,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "akiramiyakoda.cppincludeguard",
+                "cheshirekow.cmake-format",
+                "Gruntfuggly.todo-tree",
+                "marus25.cortex-debug",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools",
+                "streetsidesoftware.code-spell-checker",
+                "trond-snekvik.devicetree",
+                "trond-snekvik.kconfig-lang",
+                "twxs.cmake",
+                "xaver.clang-format",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    }
+}

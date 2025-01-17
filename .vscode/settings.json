@@ -1,0 +1,10 @@
+{
+    "C_Cpp.autoAddFileAssociations": false,
+    "C/C++ Include Guard.Macro Type": "Filepath",
+    "C/C++ Include Guard.Path Skip": 3,
+    "C/C++ Include Guard.Remove Extension": false,
+    "cSpell.words": [
+        "zephyrproject",
+    ],
+    "C_Cpp.default.compileCommands": "build/nucleo_g474re/example/compile_commands.json"
+}

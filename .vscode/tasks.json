@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Example with West",
+            "command": "west",
+            "type": "shell",
+            "problemMatcher": "$gcc",
+            "args": [
+                "build",
+                "-b",
+                "nucleo_g474re",
+                "applications/example",
+                "--build-dir",
+                "build/nucleo_g474re/example"
+            ]
+        },
+        {
+            "label": "Combine Example compile_commands.json",
+            "type": "shell",
+            "command": "jq -s add **/compile_commands.json > compile_commands.json",
+            "options": {
+                "cwd": "${workspaceFolder}/build/nucleo_g474re/example"
+            },
+            "dependsOn": [
+                "Build Example with West",
+            ]
+        },
+        {
+            "label": "West Update",
+            "group": "build",
+            "type": "shell",
+            "command": "west update",
+        },
+        {
+            "label": "Build Example",
+            "dependsOn": [
+                "Combine Example compile_commands.json"
+            ],
+            "group": "build"
+        }
+    ]
+}
