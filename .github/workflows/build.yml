@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "15 5 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/awinterstein/zephyr-build:main
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update west workspace
+        shell: bash
+        run: west update
+
+      - name: Build application
+        shell: bash
+        run: west build -b nucleo_g474re application --build-dir build/nucleo_g474re

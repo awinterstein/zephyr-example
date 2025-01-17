@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build with West",
+            "command": "west",
+            "type": "shell",
+            "problemMatcher": "$gcc",
+            "args": [
+                "build",
+                "-b",
+                "nucleo_g474re",
+                "application",
+                "--build-dir",
+                "build/nucleo_g474re"
+            ]
+        },
+        {
+            "label": "West Update",
+            "group": "build",
+            "type": "shell",
+            "command": "west update",
+        },
+        {
+            "label": "Build Application",
+            "dependsOn": [
+                "Build with West"
+            ],
+            "group": "build",
+        }
+    ]
+}

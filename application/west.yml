@@ -1,0 +1,19 @@
+manifest:
+  # Marks that this file uses that version of the west manifest file format.
+  version: "1.2"
+
+  self:
+    # The self subsection can be used to control the manifest repository itself.
+    path: application
+
+  remotes:
+  - name: zephyrproject-rtos
+    url-base: https://github.com/zephyrproject-rtos
+
+  projects:
+  - name: zephyr
+    path: zephyr
+    remote: zephyrproject-rtos
+    revision: v3.7.0
+    west-commands: scripts/west-commands.yml
+    import: true
