@@ -4,4 +4,4 @@ project(example)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-target_sources(app PRIVATE src/main.c)
+target_sources(app PRIVATE src/main.cpp)
