@@ -22,3 +22,7 @@ jobs:
       - name: Build application
         shell: bash
         run: west build -b nucleo_g474re application --build-dir build/nucleo_g474re
+
+      - name: Check coding style
+        shell: bash
+        run: west clang-format

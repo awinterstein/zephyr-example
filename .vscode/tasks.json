@@ -27,6 +27,12 @@
                 "Build with West"
             ],
             "group": "build",
+        },
+        {
+            "label": "Format Source Code",
+            "type": "shell",
+            "command": "west clang-format --fix",
+            "group": "build",
         }
     ]
 }
