@@ -1,8 +1,11 @@
 # Zephyr directories
-bootloader
-modules
-tools
-zephyr
+/bootloader
+/modules
+/tools
+/zephyr
 
 # build directory
 build
+
+# Python cache
+__pycache__

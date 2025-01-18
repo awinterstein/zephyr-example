@@ -5,6 +5,7 @@ manifest:
   self:
     # The self subsection can be used to control the manifest repository itself.
     path: applications
+    west-commands: west-commands.yml
 
   remotes:
   - name: zephyrproject-rtos

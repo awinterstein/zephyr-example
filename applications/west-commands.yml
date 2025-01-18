@@ -1,0 +1,6 @@
+west-commands:
+  - file: west-commands.py
+    commands:
+      - name: clang-format
+        class: ClangFormat
+        help: run clang-format on the source code

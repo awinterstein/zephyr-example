@@ -6,5 +6,26 @@
     "cSpell.words": [
         "zephyrproject",
     ],
-    "C_Cpp.default.compileCommands": "build/nucleo_g474re/example/compile_commands.json"
+    "C_Cpp.default.compileCommands": "build/nucleo_g474re/example/compile_commands.json",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.formatOnSave": true,
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "editor.formatOnType": true,
+    "files.readonlyInclude": {
+        "bootloader/**": true,
+        "modules/**": true,
+        "tools/**": true,
+        "zephyr/**": true
+    },
+    "explorer.excludeGitIgnore": false,
+    "search.useIgnoreFiles": false,
+    "files.exclude": {
+        "**/vscode-data": true
+    }
 }
