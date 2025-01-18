@@ -1,0 +1,8 @@
+// Protocol buffers definition for the non-volatile storage.
+
+syntax = "proto3";
+
+// The persistent runtime statistics of the device.
+message RuntimeStatistics {
+    uint32 boot_count = 1; // how many times the device was booted already
+}

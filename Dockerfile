@@ -5,7 +5,7 @@ WORKDIR /workspaces
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PIP_NO_CACHE_DIR=1
 
-# install Zepyr development dependencies
+# install Zephyr development dependencies
 RUN apt-get update && \
     apt-get -y --no-install-recommends install \
         git cmake ninja-build gperf \
@@ -37,6 +37,10 @@ RUN wget -q https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${ZE
 
 # run the setup script of the Zephyr SDK
 RUN cd /opt/zephyr-sdk-${ZEPHYR_SDK_VERSION} && ./setup.sh -t arm-zephyr-eabi -h -c
+
+# install protobuf compiler
+RUN apt-get update && apt-get install -y --no-install-recommends protobuf-compiler
+RUN pip3 install -U protobuf==5.27.5 grpcio-tools==1.63.2
 
 # install additional packages that are needed for the development in Visual Studio Code
 RUN apt-get update && apt-get install -y --no-install-recommends jq
