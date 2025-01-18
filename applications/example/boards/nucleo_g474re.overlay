@@ -1,0 +1,7 @@
+#include "nucleo_g474re_flash.dtsi"
+
+/ {
+	chosen {
+		zephyr,code-partition = &slot0_partition;
+	};
+};

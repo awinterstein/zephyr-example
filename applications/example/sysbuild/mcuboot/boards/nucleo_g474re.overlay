@@ -1,0 +1,2 @@
+/* Including the flash layout that was defined for the application for this board. */
+#include "../../../boards/nucleo_g474re_flash.dtsi"
