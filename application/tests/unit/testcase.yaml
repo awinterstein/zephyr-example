@@ -1,0 +1,12 @@
+common:
+  tags:
+    - lib
+    - utilities
+tests:
+  application.example:
+    type: unit
+    extra_configs:
+      - CONFIG_COVERAGE=y
+      - CONFIG_COVERAGE_DUMP=y
+      - CONFIG_CPP=y
+      - CONFIG_STD_CPP2B=y

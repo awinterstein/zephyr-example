@@ -16,6 +16,34 @@
             ]
         },
         {
+            "label": "Run Tests with Twister",
+            "command": "west",
+            "type": "shell",
+            "problemMatcher": "$gcc",
+            "args": [
+                "twister",
+                "-p",
+                "unit_testing",
+                "-T",
+                "application/tests/",
+                "-O",
+                "build/twister",
+                "-c"
+            ]
+        },
+        {
+            "label": "Combine Compile Commands Files",
+            "type": "shell",
+            "command": "jq -s add **/compile_commands.json twister/unit_testing/**/**/compile_commands.json  > compile_commands.json",
+            "options": {
+                "cwd": "${workspaceFolder}/build/"
+            },
+            "dependsOn": [
+                "Build with West",
+            ],
+            "group": "build"
+        },
+        {
             "label": "West Update",
             "group": "build",
             "type": "shell",
@@ -24,7 +52,15 @@
         {
             "label": "Build Application",
             "dependsOn": [
-                "Build with West"
+                "Build with West",
+                "Combine Compile Commands Files",
+            ],
+            "group": "build",
+        },
+        {
+            "label": "Run Tests",
+            "dependsOn": [
+                "Run Tests with Twister"
             ],
             "group": "build",
         },

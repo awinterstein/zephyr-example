@@ -29,7 +29,9 @@
 
 #include <bits/c++config.h>
 #include <bits/error_constants.h>
+#include <functional>
 #include <iosfwd>
+#include <type_traits>
 #if __cplusplus > 201703L
 #include <compare>
 #endif

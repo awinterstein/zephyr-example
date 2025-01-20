@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/awinterstein/zephyr-build:main
+    permissions:
+      checks: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,3 +29,20 @@ jobs:
       - name: Check coding style
         shell: bash
         run: west clang-format
+
+      - name: Build and run unit tests
+        shell: bash
+        run: west twister -p unit_testing -T application/tests/ -O build/twister --coverage -c
+
+      - name: Publish test results in Github
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: build/twister/twister_suite_report.xml
+
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          files: build/twister/twister_suite_report.xml
+          token: ${{ secrets.CODECOV_TOKEN }}

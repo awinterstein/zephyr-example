@@ -5,6 +5,7 @@
     "C/C++ Include Guard.Remove Extension": false,
     "cSpell.words": [
         "autoremove",
+        "awinterstein",
         "ccache",
         "eabi",
         "gperf",
@@ -16,12 +17,16 @@
         "multilib",
         "NANOPB",
         "noninteractive",
+        "nucleo",
         "pycache",
         "setuptools",
+        "testbinary",
         "venv",
-        "zephyrproject"
+        "zassert",
+        "zephyrproject",
+        "ZTEST"
     ],
-    "C_Cpp.default.compileCommands": "build/nucleo_g474re/compile_commands.json",
+    "C_Cpp.default.compileCommands": "build/compile_commands.json",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "editor.formatOnSave": true,
