@@ -22,10 +22,8 @@
             "problemMatcher": "$gcc",
             "args": [
                 "twister",
-                "-p",
-                "unit_testing",
                 "-T",
-                "application/tests/",
+                "application/",
                 "-O",
                 "build/twister",
                 "-c"
@@ -34,7 +32,7 @@
         {
             "label": "Combine Compile Commands Files",
             "type": "shell",
-            "command": "jq -s add **/compile_commands.json twister/unit_testing/**/**/compile_commands.json  > compile_commands.json",
+            "command": "jq -s add **/compile_commands.json twister/unit_testing/**/**/**/compile_commands.json twister/native_sim/**/**/**/compile_commands.json  > compile_commands.json",
             "options": {
                 "cwd": "${workspaceFolder}/build/"
             },

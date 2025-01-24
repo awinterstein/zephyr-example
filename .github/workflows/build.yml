@@ -7,7 +7,7 @@ on:
     - cron: "15 5 * * *"
 
 jobs:
-  build:
+  BuildAndTest:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/awinterstein/zephyr-build:main
@@ -30,9 +30,9 @@ jobs:
         shell: bash
         run: west clang-format
 
-      - name: Build and run unit tests
+      - name: Build and run tests
         shell: bash
-        run: west twister -p unit_testing -T application/tests/ -O build/twister --coverage -c
+        run: west twister -T application/tests/ -O build/twister -c
 
       - name: Publish test results in Github
         uses: EnricoMi/publish-unit-test-result-action@v2
