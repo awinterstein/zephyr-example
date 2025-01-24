@@ -1,7 +1,7 @@
 {
     "C_Cpp.autoAddFileAssociations": false,
     "C/C++ Include Guard.Macro Type": "Filepath",
-    "C/C++ Include Guard.Path Skip": 3,
+    "C/C++ Include Guard.Path Skip": 0,
     "C/C++ Include Guard.Remove Extension": false,
     "cSpell.words": [
         "autoremove",
@@ -47,5 +47,6 @@
     "search.useIgnoreFiles": false,
     "files.exclude": {
         "**/vscode-data": true
-    }
+    },
+    "C/C++ Include Guard.Path Depth": 1
 }

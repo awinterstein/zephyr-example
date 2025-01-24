@@ -74,7 +74,7 @@ public:
 	{
 		LOG_MODULE_DECLARE(protobuf_message);
 
-		// create input stream and decoce message from it
+		// create input stream and decode message from it
 		pb_istream_t stream = pb_istream_from_buffer(buffer.data(), buffer.size());
 		const auto status = pb_decode(&stream, &message_definition, &pb_message);
 
