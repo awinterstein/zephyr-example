@@ -27,7 +27,7 @@ inline util::error_code result_to_error_code(int error)
 	}
 
 	// create the error code with the generic category (errno)
-	return util::make_error_code(std::errc{-error});
+	return util::errc{-error};
 }
 
 /**

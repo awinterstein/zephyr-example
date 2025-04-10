@@ -23,6 +23,8 @@ ZTEST(os_tests, test_result_to_error_code_conversion)
 	zassert_true(os::result_to_error_code(-EACCES).operator bool());
 
 	/* resulting error codes can be compared to std::errc values */
-	zassert_equal(os::result_to_error_code(-EADDRINUSE), std::errc::address_in_use);
-	zassert_equal(os::result_to_error_code(-EAGAIN), std::errc::resource_unavailable_try_again);
+	zassert_equal(os::result_to_error_code(-EADDRINUSE),
+		      util::error_code{util::errc::address_in_use});
+	zassert_equal(os::result_to_error_code(-EAGAIN),
+		      util::error_code{util::errc::resource_unavailable_try_again});
 }

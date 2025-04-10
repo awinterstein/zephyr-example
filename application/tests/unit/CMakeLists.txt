@@ -7,4 +7,4 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(Zephyr COMPONENTS unittest REQUIRED HINTS $ENV{ZEPHYR_BASE})
 target_include_directories(testbinary PRIVATE ../../src/)
-target_sources(testbinary PRIVATE main.cpp ../../src/util/system_error.cpp)
+target_sources(testbinary PRIVATE main.cpp ../../src/util/system_error.cpp ../../src/util/system_error/error_category.cpp)

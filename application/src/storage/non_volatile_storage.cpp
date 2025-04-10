@@ -19,7 +19,7 @@ struct error_category : public util::error_category {
 		return "non_volatile_storage";
 	}
 
-	[[nodiscard]] const char *message(int ev) const override
+	[[nodiscard]] const char *message(int ev) const noexcept override
 	{
 		switch (static_cast<storage_error_code>(ev)) {
 		case storage_error_code::device_not_ready:

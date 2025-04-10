@@ -7,6 +7,7 @@ target_sources(app PRIVATE
   # application files
   ../../src/storage/non_volatile_storage.cpp
   ../../src/util/system_error.cpp
+  ../../src/util/system_error/error_category.cpp
 
   # test files
   non_volatile_storage.cpp

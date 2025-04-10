@@ -12,6 +12,7 @@
         "gpios",
         "grpcio",
         "LIBCPP",
+        "libcxx",
         "libmagic",
         "libsdl",
         "multilib",

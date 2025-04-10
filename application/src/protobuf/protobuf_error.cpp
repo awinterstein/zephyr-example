@@ -12,7 +12,7 @@ struct error_category : public util::error_category {
 		return "protobuf_message";
 	}
 
-	[[nodiscard]] const char *message(int ev) const override
+	[[nodiscard]] const char *message(int ev) const noexcept override
 	{
 		switch (static_cast<error_code>(ev)) {
 		case error_code::encode_failure:
